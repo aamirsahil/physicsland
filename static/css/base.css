@@ -1,0 +1,31 @@
+body{
+    background-color: rgb(230, 230, 230);
+    height: 100%;
+    overflow: hidden;
+}
+.content{
+    padding: auto;
+    background-color: rgb(84, 243, 126);
+    height: 80vh;
+    width: 95vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid;
+    border-radius: 2%;
+}
+.footer{
+    font-size: large;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    z-index: 10;
+    background-color: rgb(247, 227, 245);
+    width: 100%;
+    text-align: center;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 5%;
+}

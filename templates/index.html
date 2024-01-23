@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block style %}
+<link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+
+<div class="title">Physics Land</div>
+<div class="desc">
+    This website contains lots of interesting physics and math puzzles for you to solve.<br>
+    The purpose of this website is to showcase problem solving as a fun activity and to help you visualize
+    the act of using mathematical formulas. Hope you have fun with this site &#128516;
+</div>
+<div class="img1">
+    <img src="{{ url_for('static', filename='img/mechanics.webp') }}">
+</div>
+<div class="img2">
+    <img src="{{ url_for('static', filename='img/thermodynamics.webp') }}">
+</div>
+<div class="img3">
+    <img src="{{ url_for('static', filename='img/optics.webp') }}">
+</div>
+
+{% endblock %}

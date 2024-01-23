@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %} Problem List {% endblock %}
+
+{% block content %}
+
+<!-- List of problems -->
+<h1 style="text-align: center;">Problem List</h1>
+<div style="width: 50%; margin: auto;">
+    {% for line in lines %}
+    <div style="padding: 10px; background-color: bisque; margin: 20px;">
+        <p style="font-size: 24px;"><a href="{{ url_for('problem', problem_num=loop.index) }}">{{ line }}</a></p>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

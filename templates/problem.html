@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %} Problem{{ problem_num }} {% endblock %}
+
+{% block content %}
+
+<h1 style="text-align: center;">Problme {{ problem_num }}</h1>
+
+<div style="width: 50%; margin: auto;">
+    <div style="padding: 10px; background-color: bisque; margin: 20px;">
+        <p style="font-size: 24px;">{{ problem_title }}</p>
+    </div>
+</div>
+
+{% if problem_num|int - 1 < 1 %}
+    {% set prev_route=url_for('problemList') %}
+    {% set next_route=url_for('problem', problem_num=problem_num|int + 1) %}
+{% elif problem_num|int + 1 > total_problem %}
+    {% set prev_route=url_for('problem', problem_num=problem_num|int - 1) %}
+    {% set next_route=url_for('problemList') %}
+{% else %}
+    {% set prev_route=url_for('problem', problem_num=problem_num|int - 1) %}
+    {% set next_route=url_for('problem', problem_num=problem_num|int + 1) %}
+{% endif %}
+
+<div style="padding: 10px; background-color: rgb(51, 244, 48); margin: 20px; text-align: center;">
+<h3>
+    <a href="{{ prev_route }}">Previous</a>
+    <a href="{{ next_route }}">Next</a>
+</h3>
+</div>
+
+{% endblock %}
